@@ -8,9 +8,9 @@ public void draw()
 {
 	background(255);
 	bezierSwirl(width/2, height/2, 0, PI/4, 250, 50);
-	bezierSwirl(width/2, height/2, 0, 3*PI/4, 250, 50);
+	//bezierSwirl(width/2, height/2, 0, 3*PI/4, 250, 50);
 	bezierSwirl(width/2, height/2, 0, 5*PI/4, 250, 50);
-	bezierSwirl(width/2, height/2, 0, 7*PI/4, 250, 50);
+	//bezierSwirl(width/2, height/2, 0, 7*PI/4, 250, 50);
 	// colo += transition;
 	// if(colo >= 255)
 	// 	transition = -5;
