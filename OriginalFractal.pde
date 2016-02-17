@@ -1,14 +1,22 @@
+private int colo = 0;
+private int transition = 5;
 public void setup()
 {
 	size(800, 800);
+	frameRate(colo);
 }
 public void draw()
 {
-	background((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-	bezierSwirl(width/2, height/2, 0, PI/4, 50);
-	bezierSwirl(width/2, height/2, 0, 3*PI/4, 50);
-	bezierSwirl(width/2, height/2, 0, 5*PI/4, 50);
-	bezierSwirl(width/2, height/2, 0, 7*PI/4, 50);
+	background(colo);
+	bezierSwirl(width/2, height/2, 0, PI/4, 250);
+	bezierSwirl(width/2, height/2, 0, 3*PI/4, 250);
+	bezierSwirl(width/2, height/2, 0, 5*PI/4, 250);
+	bezierSwirl(width/2, height/2, 0, 7*PI/4, 250);
+	colo += transition;
+	if(colo >= 255)
+		transition = -5;
+	else if(colo <= 0)
+		transition = 5;
 }
 public void bezierSwirl(int x, int y, float scale, float angle, int col)
 {
@@ -16,7 +24,8 @@ public void bezierSwirl(int x, int y, float scale, float angle, int col)
 	translate(x, y);
 	scale(scale);
 	rotate(angle);
-	fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+	fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+	//fill(colo-50);
 	bezier(x, y-(height/2), x-(width/2), y-(height/4), x-(width/2), y+(height/4), x, y+(height/2));
 	fill(col+5, 0, 0);
 	ellipse(x-100, y, 400, 400);
@@ -24,5 +33,5 @@ public void bezierSwirl(int x, int y, float scale, float angle, int col)
 	ellipse(x-50, y-150, 400, 400);
 	popMatrix();
 	if(scale <= 2)
-		bezierSwirl(x, y, scale+0.05, angle-(PI/32), col+5);
+		bezierSwirl(x, y, scale+0.05, angle-(PI/32), col-5);
 }
