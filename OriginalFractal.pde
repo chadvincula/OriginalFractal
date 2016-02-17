@@ -7,9 +7,12 @@ public void setup()
 public void draw()
 {
 	background(255);
+	pushMatrix();
+	rotate(PI/mouseX);
 	bezierSwirl(width/2, height/2, 0, PI/4, 250, 50);
+	popMatrix();
 	//bezierSwirl(width/2, height/2, 0, 3*PI/4, 250, 50);
-	bezierSwirl(width/2, height/2, 0, 5*PI/4, 250, 50);
+	//bezierSwirl(width/2, height/2, 0, 5*PI/4, 250, 50);
 	//bezierSwirl(width/2, height/2, 0, 7*PI/4, 250, 50);
 	// colo += transition;
 	// if(colo >= 255)
@@ -33,5 +36,5 @@ public void bezierSwirl(int x, int y, float scale, float angle, int col, int col
 	ellipse(x-50, y-150, 400, 400);
 	popMatrix();
 	if(scale <= 2)
-		bezierSwirl(x, y, scale+0.05, angle-(PI/32), col-5, col2+6);
+		bezierSwirl(x, y, scale+0.05, angle-(PI/4), col-5, col2+6);
 }
