@@ -8,8 +8,9 @@ public void draw()
 {
 	background(255);
 	pushMatrix();
-	rotate(PI/mouseX);
-	bezierSwirl(width/2, height/2, 0, PI/4, 250, 50);
+	// translate(width/2, height/2);
+	// rotate(PI/mouseX);
+	bezierSwirl(mouseX, mouseY, 0, PI/4, 250, 50);
 	popMatrix();
 	//bezierSwirl(width/2, height/2, 0, 3*PI/4, 250, 50);
 	//bezierSwirl(width/2, height/2, 0, 5*PI/4, 250, 50);
