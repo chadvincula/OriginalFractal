@@ -31,10 +31,10 @@ public void bezierSwirl(int x, int y, float scale, float angle, int col, int col
 	// fill(colo-50);
 	fill(col2+5);
 	bezier(x, y-(height/2), x-(width/2), y-(height/4), x-(width/2), y+(height/4), x, y+(height/2));
-	fill(col+5, 0, 0);
-	ellipse(x-100, y, 400, 400);
-	fill(col+5, col, 0);
-	ellipse(x-50, y-150, 400, 400);
+	// fill(col+5, 0, 0);
+	// ellipse(x-100, y, 400, 400);
+	// fill(col+5, col, 0);
+	// ellipse(x-50, y-150, 400, 400);
 	popMatrix();
 	if(scale <= 2)
 		bezierSwirl(x, y, scale+0.05, angle-(PI/4), col-5, col2+6);
