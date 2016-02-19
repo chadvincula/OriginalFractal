@@ -1,5 +1,5 @@
 private int colo = 0;
-private int transition = 5;
+private int transition = 1;
 public void setup()
 {
 	size(800, 800);
@@ -13,9 +13,9 @@ public void draw()
 	bezierSwirl(width/2, height/2, 0, 7*PI/4, 250, 50);
 	colo += transition;
 	if(colo >= 255)
-		transition = -5;
+		transition = -1;
 	else if(colo <= 0)
-		transition = 5;
+		transition = 1;
 }
 public void bezierSwirl(int x, int y, float scl, float angle, int col, int col2)
 {
