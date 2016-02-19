@@ -23,12 +23,13 @@ public void bezierSwirl(int x, int y, float scl, float angle, int col, int col2)
 	translate(x, y);
 	scale(scl);
 	rotate(angle);
-	noStroke();
-	fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+	//noStroke();
+	//fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+	noFill();
 	bezier(x, y-(height/2), x-(width/2), y-(height/4), x-(width/2), y+(height/4), x, y+(height/2));
-	fill(col+5, 0, 0);
+	//fill(col+5, 0, 0);
 	ellipse(x-100, y, 400, 400);
-	fill(col+5, col, 0);
+	//fill(col+5, col, 0);
 	ellipse(x-50, y-150, 400, 400);
 	popMatrix();
 	if(scl <= 2)
